@@ -1,0 +1,23 @@
+version: 2.1
+
+orbs:
+  node: circleci/node@5.1.0
+
+jobs:
+  validate_and_build:
+    executor: node/default
+    steps:
+      - checkout
+      - node/install-packages:
+          pkg-manager: npm
+      - run:
+          command: npm run validate
+          name: Run Validate
+      - run:
+          command: npm run build
+          name: Build app
+
+workflows:
+  validate_my_app:
+    jobs:
+      - validate_and_build
