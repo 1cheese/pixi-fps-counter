@@ -45,13 +45,18 @@ export class PixiFpsCounter extends Container {
   };
 
   private createBackground = (): void => {
-    const { width: textWidth, height: textHeight } = this._text;
     const { backgroundPadding } = this._options;
     const background = new Graphics()
       .beginFill(this._options.backgroundColor)
-      .drawRect(0, 0, textWidth + 2 * backgroundPadding, textHeight + 2 * backgroundPadding)
+      .drawRect(
+        0,
+        0,
+        this.width + 2 * backgroundPadding,
+        this.height + 2 * backgroundPadding,
+      )
       .endFill();
     background.position.set(-backgroundPadding);
+    this.pivot.set(-backgroundPadding);
     this.addChildAt(background, 0);
   };
 
