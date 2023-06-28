@@ -1,0 +1,45 @@
+{
+  "name": "pixi-fps-counter",
+  "version": "1.0.0",
+  "description": "FPS counter for PixiJS v7",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "license": "MIT",
+  "author": "1cheese",
+  "keywords": [
+    "pixi",
+    "pixijs",
+    "pixi.js",
+    "fps",
+    "counter"
+  ],
+  "scripts": {
+    "build": "npm run clean && tsc",
+    "clean": "rimraf dist/",
+    "validate": "tsc --noEmit",
+    "preversion": "npm whoami && npm run build",
+    "postversion": "git push --follow-tags && npm publish",
+    "major": "npm version major -m \"Release %s\"",
+    "minor": "npm version minor -m \"Release %s\"",
+    "patch": "npm version patch -m \"Release %s\""
+  },
+  "repository": {
+    "type": "https",
+    "url": "https://github.com/1cheese/pixi-fps-counter.git"
+  },
+  "files": [
+    "/dist"
+  ],
+  "peerDependencies": {
+    "@pixi/display": "^7.2.4",
+    "@pixi/events": "^7.2.4",
+    "@pixi/graphics": "^7.2.4",
+    "@pixi/text": "^7.2.4",
+    "@pixi/ticker": "^7.2.4"
+  },
+  "devDependencies": {
+    "prettier": "^2.8.8",
+    "rimraf": "^5.0.1",
+    "typescript": "^5.1.5"
+  }
+}
