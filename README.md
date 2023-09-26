@@ -24,6 +24,7 @@ The only required argument you should pass to `PixiFpsCounter` constructor is a 
 import { PixiFpsCounter } from 'pixi-fps-counter';
 
 const counter = new PixiFpsCounter(pixiApp.ticker);
+pixiApp.stage.addChild(counter);
 ```
 
 ## Usage with options
@@ -47,6 +48,7 @@ const options: FpsCounterOptions = {
   updateCoefficient: 10,
 };
 const counter = new PixiFpsCounter(pixiApp.ticker, options);
+pixiApp.stage.addChild(counter);
 ```
 
 Here's the table with possible options:
